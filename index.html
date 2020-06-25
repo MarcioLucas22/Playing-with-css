@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+
+    <style>
+
+        body {
+            background-color: rgb(228, 222, 222);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /*TESTE PARA O JUSTIFY-CONTENT*/
+        #principal {
+            display: flex;
+            border: 1px solid red;
+            justify-content: space-between;
+        }
+
+        /* INICIO DO CSS PARA O BOTAO*/
+        #button a {
+            background: #34cb79;
+            display: flex;
+            text-decoration: none;
+            color: white;
+            align-items: center;
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            margin-top: 40px;
+            transition: 400ms;
+        }
+
+        #button a p {
+            flex: 1;
+            text-align: center;
+
+        }
+
+        #button a:hover {
+            background-color: #2fb86e;
+        }
+
+        #button span {
+            width: 72px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.08);
+            justify-content: center;
+        }
+
+        img {
+            width: 30px;
+            height: 30px;
+        }   /* FIM DO CSS PARA O BOTAO*/
+
+
+        /* INÍCIO DO CSS PARA O FORMULÁRIO*/
+        form {
+            background-color: white;
+            padding: 64px;
+            border-radius: 8px;
+            margin: 80px auto;
+            max-width: 730px;
+            box-sizing: border-box;
+        }
+
+        form fieldset {
+            margin-top: 64px;
+            border: 0;
+        }
+
+        form legend {
+            margin-bottom: 40px;
+        }
+
+        form legend h2 {
+            font-size: 24px;
+        }
+
+        form .field {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 24px;
+            flex: 1;
+        }
+
+        form .field-group {
+            display: flex;
+            
+        }
+
+        form input,
+        form select {
+            background-color: #f0f0f5;
+            border: 0;
+            padding: 16px 24px;
+            font-size: 16px;
+            outline: none;
+            border-radius: 8px;
+        }
+
+        form select {
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        form label {
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        form .field-group .field + .field {
+            margin-left: 24px;
+        }
+
+        form button {
+            width: 260px;
+            height: 56px;
+            background-color:#34cb79;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            font-size: 16px;
+            border: 0;
+            margin-top: 40px;
+            transition: 400ms;
+        }
+
+        form button:hover {
+            background-color: #2fb86e;
+        }   /* FIM DO CSS PARA O FORMULÁRIO */
+
+        .items-grid {
+            display: grid;
+            grid-template-columns: 200px 200px 200px;
+            gap: 16px;
+        }
+
+        .items-grid li {
+            background-color: #f0f0f5;
+            border-radius: 8px;
+            width: 200px;
+            height: 150px;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .items-grid li span {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+
+        .items-grid li:hover {
+            border: 2px solid #2fb86e;
+            background-color: #e1e1e6;
+        }
+
+        .items-grid li img {
+            width: 80px;
+            height: 60px;
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div id="principal">
+
+        <div class="conteudo">
+            conteudo 1 
+        </div>
+
+        <div class="conteudo">
+            conteudo 2
+        </div>
+
+    </div>
+
+    <div id="button">
+        <a href="#"><span><img src="lupa1.png" alt=""></span><p>Pesquisar pontos de coleta</p></a>
+    </div>
+    
+    <form action="">
+        <h1>Cadastro do ponto de coleta</h1>
+
+        <fieldset>
+            <legend>
+                <h2>Dados da entidade</h2>
+            </legend>
+
+            <div class="field">
+                <label for="name">Nome da entidade</label>
+                <input type="text" name="name">
+            </div>
+
+            <div class="field-group">
+                <div class="field">
+                    <label for="adress">Endereço</label>
+                    <input type="text" name="adress">
+                </div>
+                <div class="field">
+                    <label for="adress">Número/Complemento</label>
+                    <input type="number" name="adress2">
+                </div>
+            </div>
+
+            <div class="field-group">
+                <div class="field">
+                    <label for="state">Estado</label>
+                    <select name="uf">
+                        <option value="">Selecione o estado</option>
+                    </select>
+                </div>
+                <div class="field">
+                    <label for="city">Cidade</label>
+                    <select name="city" disabled>
+                        <option value="">Selecione a cidade</option>
+                    </select>
+                </div>
+            </div>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>
+                <h2>Itens de Coleta</h2>
+            </legend>
+
+                <div class="items-grid">
+                    <li data-id="item1">
+                        <img src="lampada.png" alt="">
+                        <span>Lampada1</span>
+                    </li>
+
+                    <li data-id="item2">
+                        <img src="lampada.png" alt="">
+                        <span>Lampada2</span>
+                    </li>
+
+                    <li data-id="item3">
+                        <img src="lampada.png" alt="">
+                        <span>Lampada3</span>
+                    </li>
+
+                    <li data-id="item4">
+                        <img src="lampada.png" alt="">
+                        <span>Lampada4</span>
+                    </li>
+
+                    <li data-id="item5">
+                        <img src="lampada.png" alt="">
+                        <span>Lampada5</span>
+                    </li>
+
+                    <li data-id="item6">
+                        <img src="lampada.png" alt="">
+                        <span>Lampada6</span>
+                    </li>
+                </div>
+                
+        </fieldset>
+
+        <button type="submit">Cadastrar ponto de coleta</button>
+
+    </form>
+
+    <script src="../Teste Para o Curso/create-point.js">
+
+    </script>
+
+</body>
+</html>
